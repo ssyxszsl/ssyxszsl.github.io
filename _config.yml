@@ -1,62 +1,155 @@
-# Academic Pages 全站配置
-# 修改本文件后，请停止并重新启动本地 Jekyll 服务。
-# 请将头像保存为 images/profile.png，将公开版简历保存为 files/resume.pdf。
-# 本配置按照个人学术主页与网页简历场景整理，并删除了未在简历中出现的
-# 社交平台、教学经历、学术报告和评论系统等配置。
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve`. If you change this file, please restart the server process.
 
-
-# ============================================================
-# 网站基础信息
-# ============================================================
-
-locale                   : "zh-CN"
-site_theme               : "default"
-
-title                    : "Homepage"
-title_separator          : "·"
-name                     : &name "史少阳"
-
-description              : &description "史少阳的个人学术主页，聚焦智能车辆规划与控制、风险感知强化学习、模型预测控制、感知不确定性评估、自动驾驶轨迹规划与无人平台路径规划。"
-
-# 当前按照简历中的 GitHub 用户名 ssyxszsl 配置。
-# 如果实际 GitHub Pages 仓库名称不同，请同步修改 url 和 repository。
-url                      : "https://ssyxszsl.github.io"
-baseurl                  : ""
+# Site Settings
+title                    : "Shi shaoyang (史少阳)"
+description              : "I am a PhD student at Tsinghua University under Prof. Yechen QIn. My research focuses on decision-making and planning."
 repository               : "ssyxszsl/ssyxszsl.github.io"
 
 
-# ============================================================
-# 作者信息
-#
-# Academic Pages 默认会在侧栏中显示头像、姓名、简介、单位、
-# 地点、邮箱和 GitHub。
-#
-# phone、resume、research_interests 为自定义字段。
-# 如需在侧栏中显示，可在 _includes/author-profile.html 中通过
-# site.author.phone、site.author.resume 等变量读取。
-# ============================================================
-
+# Site Author
 author:
-  avatar                 : "profile.png"
-  name                   : *name
+  name             : "Shi shaoyang | 史少阳"
+  avatar           : "images/ssy.png"
+  bio              : "PhD Candidate @ Beijing Institute of Technology"
+  location         : "Beijing, China"
+  employer         :
+  pubmed           : 
+  googlescholar    : 
+  email            : "15117993722@163.com"
+  researchgate     : 
+  uri              :
+  bitbucket        :
+  codepen          :
+  dribbble         :
+  flickr           :
+  facebook         :
+  foursquare       :
+  github           : 
+  google_plus      : 
+  keybase          :
+  instagram        :
+  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
+  lastfm           :
+  linkedin         : # "rayeren"
+  dblp             : # "https://dblp.org/pid/266/9827.html"
+  orcid            : #
+  pinterest        :
+  soundcloud       :
+  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  steam            :
+  tumblr           :
+  twitter          : #
+  vine             :
+  weibo            :
+  xing             :
+  youtube          :
+  wikipedia        :
 
-  bio                    : "北京理工大学车辆工程硕博连读博士研究生，研究方向为智能车辆规划与控制，预计于 2027 年 6 月毕业。"
 
-  location               : "北京，中国"
-  employer               : "北京理工大学"
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - Cites
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - CHANGELOG
+  - Capfile
+  - Gemfile
+  - Gruntfile.js
+  - LICENSE
+  - README
+  - Rakefile
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - config
+  - gulpfile.js
+  - log
+  - node_modules
+  - package.json
+  - tmp
+  - vendor
+  - google_scholar_crawler
+  - github_myprofile_updater
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-  uri                    : "https://ssyxszsl.github.io"
-  email                  : "shishaoyang@bit.edu.cn"
-  phone                  : "151-1799-3722"
-  github                 : "ssyxszsl"
-  resume                 : "/files/resume.pdf"
 
-  research_interests:
-    - "智能车辆规划与控制"
-    - "风险感知强化学习"
-    - "模型预测控制"
-    - "感知不确定性评估"
-    - "自动驾驶轨迹规划"
-    - "无人平台路径规划"
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 
 
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Defaults
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+      author_profile: true
+
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+
+# Outputting
+permalink: /:categories/:title/
+timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-redirect-from
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
