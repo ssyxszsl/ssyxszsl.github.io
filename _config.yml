@@ -69,7 +69,7 @@ author:
 # ============================================================
 
 resume:
-  pdf                    : "/files/resume.pdf"
+  # pdf                    : "/files/resume.pdf"
 
   profile:
     full_name            : "史少阳"
