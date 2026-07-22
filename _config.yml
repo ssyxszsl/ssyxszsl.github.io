@@ -1,460 +1,327 @@
-# ============================================================
-# Academic Pages / Jekyll 全局配置
-#
-# 本文件用于配置网站名称、作者信息、SEO、内容集合和插件等。
-# 修改本文件后，本地运行时需要停止并重新启动 Jekyll：
-#
-# bundle exec jekyll serve -l -H localhost
-#
-# 网站地址：
-# https://ssyxszsl.github.io
-# ============================================================
+# Academic Pages 全站配置
+# 修改本文件后，请停止并重新启动本地 Jekyll 服务。
+# 请将头像保存为 images/profile.png，将公开版简历保存为 files/resume.pdf。
+# 本配置按照个人学术主页与网页简历场景整理，并删除了未在简历中出现的
+# 社交平台、教学经历、学术报告和评论系统等配置。
 
 
 # ============================================================
-# 一、网站基础信息
+# 网站基础信息
 # ============================================================
 
-# 中文语言环境
 locale                   : "zh-CN"
+site_theme               : "default"
 
-# 可选主题：
-# default、air、sunrise、mint、dirt、contrast
-#
-# air 风格简洁、留白较多，适合作为个人学术主页和网页简历
-site_theme               : "air"
-
-# 网站主标题
 title                    : "史少阳｜智能车辆规划与控制"
-
-# 浏览器标题中使用的分隔符
-title_separator          : "-"
-
-# 网站名称
+title_separator          : "·"
 name                     : &name "史少阳"
 
-# 网站默认描述
-# 用于搜索引擎、页面元信息和社交平台分享
-description              : &description "史少阳的个人学术主页。北京理工大学车辆工程硕博连读研究生，研究方向包括智能车辆决策与规划、风险感知强化学习、模型预测控制、感知不确定性评估、三维环境感知与路径规划。"
+description              : &description "史少阳的个人学术主页，聚焦智能车辆规划与控制、风险感知强化学习、模型预测控制、感知不确定性评估、自动驾驶轨迹规划与无人平台路径规划。"
 
-# GitHub Pages 网站地址
+# 当前按照简历中的 GitHub 用户名 ssyxszsl 配置。
+# 如果实际 GitHub Pages 仓库名称不同，请同步修改 url 和 repository。
 url                      : "https://ssyxszsl.github.io"
-
-# 用户主页仓库不需要子路径
 baseurl                  : ""
-
-# GitHub 仓库名称
 repository               : "ssyxszsl/ssyxszsl.github.io"
 
 
 # ============================================================
-# 二、作者信息
+# 作者信息
 #
-# 这些信息通常显示在网页左侧作者栏。
-# 留空的字段一般不会显示。
-# 作者栏模板位于：
-# _includes/author-profile.html
+# Academic Pages 默认会在侧栏中显示头像、姓名、简介、单位、
+# 地点、邮箱和 GitHub。
+#
+# phone、resume、research_interests 为自定义字段。
+# 如需在侧栏中显示，可在 _includes/author-profile.html 中通过
+# site.author.phone、site.author.resume 等变量读取。
 # ============================================================
 
 author:
+  avatar                 : "profile.png"
+  name                   : *name
 
-  # ----------------------------------------------------------
-  # 基本信息
-  # ----------------------------------------------------------
+  bio                    : "北京理工大学车辆工程硕博连读博士研究生，研究方向为智能车辆规划与控制，预计于 2027 年 6 月毕业。"
 
-  # 请将头像保存为：
-  # images/profile.png
-  avatar           : "profile.png"
+  location               : "北京，中国"
+  employer               : "北京理工大学"
 
-  name             : "史少阳"
+  uri                    : "https://ssyxszsl.github.io"
+  email                  : "shishaoyang@bit.edu.cn"
+  phone                  : "151-1799-3722"
+  github                 : "ssyxszsl"
+  resume                 : "/files/resume.pdf"
 
-  # 英文姓名不是 Academic Pages 默认字段，
-  # 但可以在自定义页面中通过 site.author.english_name 调用
-  english_name     : "Shaoyang Shi"
-
-  pronouns         :
-
-  # 左侧作者栏建议保持简洁
-  bio              : "北京理工大学车辆工程硕博连读研究生，研究智能车辆决策、规划、控制与安全。预计于 2027 年 6 月毕业。"
-
-  location         : "北京，中国"
-
-  employer         : "北京理工大学"
-
-  # 个人网站主页
-  uri              : "https://ssyxszsl.github.io"
-
-  # 学校邮箱
-  email            : "shishaoyang@bit.edu.cn"
-
-  # 建议不要在公开 GitHub 仓库中直接保存手机号
-  phone            :
+  research_interests:
+    - "智能车辆规划与控制"
+    - "风险感知强化学习"
+    - "模型预测控制"
+    - "感知不确定性评估"
+    - "自动驾驶轨迹规划"
+    - "无人平台路径规划"
 
 
-  # ----------------------------------------------------------
-  # 学术平台
-  #
-  # 已经注册相应平台后，再填写完整主页 URL。
-  # 不要填写示例地址，否则网页会显示错误链接。
-  # ----------------------------------------------------------
+# ============================================================
+# 网页简历结构化数据
+#
+# 以下内容可在 Markdown、HTML 或 Liquid 页面中通过 site.resume 读取。
+# Academic Pages 不会自动渲染这些自定义字段，需要在首页或其他页面中
+# 使用 Liquid 模板输出。
+# ============================================================
 
-  academia         :
-  arxiv            :
-  googlescholar    :
-  inspire-hep      :
-  impactstory      :
-  orcid            :
-  semantic         :
-  ssrn             :
-  pubmed           :
-  researchgate     :
-  scopus           :
-  zotero           :
+resume:
+  pdf                    : "/files/resume.pdf"
+
+  profile:
+    full_name            : "史少阳"
+    english_name         : "Shaoyang Shi"
+    birth                : "1999.07"
+    gender               : "男"
+    hometown             : "河北"
+    ethnicity            : "汉族"
+    political_status     : "中共党员"
+    current_status       : "博士三年级（在读）"
+    expected_graduation  : "2027.06"
+
+    phone                : "151-1799-3722"
+    email                : "shishaoyang@bit.edu.cn"
+    github               : "https://github.com/ssyxszsl"
+
+    research_direction   : "智能车辆规划与控制"
 
 
   # ----------------------------------------------------------
-  # 代码仓库与开发平台
+  # 教育背景
   # ----------------------------------------------------------
 
-  bitbucket        :
-  codepen          :
-  dribbble         :
+  education:
+    - institution        : "北京理工大学"
+      major              : "车辆工程"
+      degree             : "硕博连读（推免）"
+      period             : "2021.09 - 2027.06"
+      advisor            : "秦也辰 教授（优青）"
+      status             : "在读，预计 2027 年 6 月毕业"
 
-  # GitHub 只填写用户名
-  github           : "ssyxszsl"
-
-  kaggle           :
-  stackoverflow    :
+    - institution        : "北京化工大学"
+      major              : "机械工程"
+      degree             : "本科"
+      period             : "2017.09 - 2021.06"
+      advisor            : "王维民 教授"
+      rank               : "1/125"
 
 
   # ----------------------------------------------------------
-  # 社交媒体
-  #
-  # 尚未公开或不希望展示的平台保持为空。
+  # 荣誉与奖励
   # ----------------------------------------------------------
 
-  artstation       :
-  bluesky          :
-  facebook         :
-  flickr           :
-  foursquare       :
-  goodreads        :
-  google_plus      :
-  keybase          :
-  instagram        :
-  lastfm           :
-  linkedin         :
-  mastodon         :
-  medium           :
-  pinterest        :
-  soundcloud       :
-  steam            :
-  telegram         :
-  tumblr           :
-  twitter          :
-  vine             :
-  weibo            :
-  wikipedia        :
-  xing             :
-  youtube          :
-  zhihu            :
+  honors:
+    - "国家奖学金（两次）"
+    - "一等学业奖学金"
+    - "优秀党员"
+    - "优秀团干部"
+    - "京彩大创市级一等奖"
+
+
+  # ----------------------------------------------------------
+  # 语言能力
+  # ----------------------------------------------------------
+
+  language:
+    - name               : "大学英语六级（CET-6）"
+      score              : "505"
+
+
+  # ----------------------------------------------------------
+  # 项目经历
+  # ----------------------------------------------------------
+
+  projects:
+    - title              : "基于风险感知自进化强化学习的自动驾驶决策与规划系统研究"
+      period             : "2025.10 - 2026.06"
+      role               : "负责人"
+      program            : "面上项目"
+
+      description        : "面向高速、多车密集交互驾驶场景，构建“强化学习决策—模型预测控制规划—在线风险监督”一体化系统，使驾驶策略能够持续适应动态交通风险，并兼顾通行效率、舒适性、安全性与鲁棒性。"
+
+      highlights:
+        - "构建风险感知强化学习决策框架：融合自车与周围车辆状态，基于 SAC 输出目标速度与横向位置的高层交互决策，实现跟驰、换道与超车行为优化。"
+        - "设计自进化风险学习机制：构建风险价值网络预测短时碰撞风险，利用最新交互数据周期性更新，并将风险估计用于奖励塑形，驱动策略持续向低风险行为演化。"
+        - "实现安全规划与在线兜底：将 SAC 决策嵌入 MPC 轨迹优化，结合车辆动力学、道路边界与碰撞规避约束生成可行轨迹；风险超过阈值时切换保守策略，实现在线安全监督。"
+
+      validation          : "完成硬件在环实验验证"
+
+      outputs:
+        - "Shaoyang Shi, et al. A Risk-Aware Decision Making and Motion Planning Framework for Interactive Autonomous Driving. 2026 IEEE 29th International Conference on Intelligent Transportation Systems (ITSC), 2026: 399-406."
+        - "Shaoyang Shi et al. Policy-conditioned Risk-aware Safe Reinforcement Learning with Model-Based Planning for Autonomous Driving. Expert Systems with Applications. Under review."
+
+
+    - title              : "感知不确定性驱动的自动驾驶风险自适应轨迹规划系统"
+      period             : "2024.04 - 2026.03"
+      focused_period     : "2025.04 - 2025.12"
+      role               : "负责人"
+      program            : "国家重点研发计划子课题"
+
+      description        : "面向遮挡、传感器噪声与长尾目标导致感知不确定性显著上升的复杂驾驶场景，构建感知不确定性驱动的风险自适应轨迹规划框架，实现感知可靠性量化、风险建模与规划决策的协同优化。"
+
+      highlights:
+        - "构建感知不确定性量化模型：基于 Monte Carlo Dropout 改进 PointPillars 三维目标检测器，联合建模分类不确定性与定位回归不确定性，输出目标级感知风险指标。"
+        - "设计不确定性自适应 MPC 规划器：将周车感知不确定性引入轨迹跟踪权重、碰撞规避权重与障碍物势场；感知风险升高时自动扩大安全距离并降低激进跟踪行为，实现安全性与通行效率的动态权衡。"
+        - "实现时序风险传播与车辆约束规划：融合多帧检测与跟踪信息平滑不确定性估计，结合车辆动力学、道路边界和执行器约束生成连续可行的安全轨迹。"
+
+      outputs:
+        - "Shaoyang Shi et al. Perceptual Uncertainty-aware Trajectory Planning for Autonomous Vehicles. IEEE Transactions on Vehicular Technology. Under review."
+        - "秦也辰、史少阳等：一种自动驾驶轨迹规划方法、系统、设备、介质及产品（发明专利，实质审查）。"
+        - "秦也辰、史少阳等：一种面向自动驾驶的感知不确定性评估方法（发明专利，实质审查）。"
+
+
+    - title              : "面向非结构化地形的无人平台可通行性建模与自适应路径规划"
+      period             : "2024.01 - 2026.06"
+      role               : "主要参与"
+
+      description        : "面向坡面、台阶、碎石和起伏地形等复杂非结构化环境，构建基于平台通行能力与稳定性约束的可通行性路径规划框架，通过地形特征生成连续可通行性代价地图，实现面向不同平台能力的自适应安全路径规划。"
+
+      highlights:
+        - "构建地形可通行性评估模型：基于 LiDAR 与 IMU 构建高程地图，提取坡度、台阶高度和地形粗糙度等特征，将几何环境转换为连续可通行性代价。"
+        - "设计平台能力参数化机制：将离地间隙、最大爬坡角、越障高度、可接受粗糙度与横向稳定性约束映射到代价地图，使同一规划器能够适配不同机动能力的平台。"
+        - "改进全局路径搜索算法：在节点扩展代价中融合地形风险、曲率变化与换向惩罚，并在启发函数中加入最小地形代价下界，生成兼顾安全性、平滑性和可执行性的路径。"
+
+      outputs:
+        - "Yifei Han, Shaoyang Shi, et al. Optimized 3D Path Planning for Unmanned Platforms in Complex Unstructured Environments. 2024 8th CAA International Conference on Vehicular Control and Intelligence (CVCI), 2024."
+        - "Xiaoxi Nie, Shaoyang Shi, et al. Navigation of Ground Unmanned Platforms with Adaptive Traversability in Unstructured Terrain. 2026 10th CAA International Conference on Vehicular Control and Intelligence (CVCI). Under review."
+
+
+    - title              : "分辨率自适应高程建图与路面预瞄感知系统"
+      period             : "2023.04 - 2025.12"
+      role               : "负责人"
+
+      description        : "面向智能悬架与底盘控制的路面预瞄需求，构建融合点云分割、属性感知更新与自适应分辨率优化的道路表面预瞄方法，为智能车辆底盘和悬架控制提供高精度前视路面信息。"
+
+      highlights:
+        - "构建属性感知高程建图方法：基于局部 RANSAC 点云分割区分地面点与非地面点，并设计差异化地图更新策略，提高障碍物与路面区域的高程重建精度。"
+        - "设计分辨率自适应优化算法：基于栅格高程方差构建四叉树细分机制，在平坦区域保持低分辨率，在起伏区域动态加密，实现精度与计算开销的平衡。"
+        - "完成仿真与实车验证：结合车辆运动学模型预测四轮轨迹，通过轮宽范围内的加权高程提取生成前方路面高程信息。"
+
+      outputs:
+        - "Shaoyang Shi et al. Resolution-adaptive elevation mapping based road surface preview method for intelligent vehicles. Measurement, 2026, 272: 121066."
+        - "秦也辰、史少阳等：一种基于点云输入的路面预瞄方法、系统、设备及介质（发明专利）。"
+
+
+  # ----------------------------------------------------------
+  # 竞赛经历
+  # ----------------------------------------------------------
+
+  competition:
+    - title              : "Onsite 自动驾驶算法挑战赛 - 乘用车行车赛道 PNC 算法开发"
+      period             : "2024.03 - 2024.06"
+      role               : "负责人"
+
+      task               : "开发自动驾驶规划与控制算法，并基于 2000 余个场景的闭环仿真结果进行多维度评分。"
+
+      rankings:
+        - "第二届排名：7/43"
+        - "第三届排名：4/56"
+
+      highlights:
+        - "实现全局规划、局部规划 EMPlanner 与纯追踪轨迹跟踪算法。"
+        - "设计场景识别器以及适用于大曲率场景的采样式 IDM 规划算法。"
+        - "设计基于周围车辆与交通灯的自适应参考车速模块。"
+        - "在规划算法中加入考虑横摆角速度约束的限速机制，并在跟踪算法中设计基于曲率与车速的自适应预瞄距离，避免大曲率弯道中的控制输出过大。"
+
+      link               : "https://github.com/ssyxszsl"
+
+
+  # ----------------------------------------------------------
+  # 科研成果
+  # ----------------------------------------------------------
+
+  publications:
+    journals:
+      - title            : "Resolution-adaptive elevation mapping based road surface preview method for intelligent vehicles"
+        authors          : "Shaoyang Shi et al."
+        venue            : "Measurement"
+        year             : "2026"
+        volume           : "272"
+        article          : "121066"
+        note             : "Q1, TOP, IF = 6.0"
+        status           : "已发表"
+
+      - title            : "Perceptual Uncertainty-aware Trajectory Planning for Autonomous Vehicles"
+        authors          : "Shaoyang Shi et al."
+        venue            : "IEEE Transactions on Vehicular Technology"
+        note             : "Q1, TOP, IF = 7.4"
+        status           : "审稿中"
+
+      - title            : "Policy-conditioned Risk-aware Safe Reinforcement Learning with Model-Based Planning for Autonomous Driving"
+        authors          : "Shaoyang Shi et al."
+        venue            : "Expert Systems with Applications"
+        note             : "Q1, TOP, IF = 9.5"
+        status           : "审稿中"
+
+    conferences:
+      - title            : "A Risk-Aware Decision Making and Motion Planning Framework for Interactive Autonomous Driving"
+        authors          : "Shaoyang Shi, et al."
+        venue            : "2026 IEEE 29th International Conference on Intelligent Transportation Systems (ITSC)"
+        year             : "2026"
+        pages            : "399-406"
+        note             : "交通领域顶级会议"
+
+      - title            : "Optimized 3D Path Planning for Unmanned Platforms in Complex Unstructured Environments"
+        authors          : "Yifei Han, Shaoyang Shi, et al."
+        venue            : "2024 8th CAA International Conference on Vehicular Control and Intelligence (CVCI)"
+        year             : "2024"
+
+      - title            : "Navigation of Ground Unmanned Platforms with Adaptive Traversability in Unstructured Terrain"
+        authors          : "Xiaoxi Nie, Shaoyang Shi, et al."
+        venue            : "2026 10th CAA International Conference on Vehicular Control and Intelligence (CVCI)"
+        year             : "2026"
+        status           : "审稿中"
+
+
+  # ----------------------------------------------------------
+  # 发明专利
+  # ----------------------------------------------------------
+
+  patents:
+    - title              : "一种自动驾驶轨迹规划方法、系统、设备、介质及产品"
+      inventors          : "秦也辰、史少阳等"
+      status             : "实质审查"
+
+    - title              : "一种面向自动驾驶的感知不确定性评估方法"
+      inventors          : "秦也辰、史少阳等"
+      status             : "实质审查"
+
+    - title              : "一种基于点云输入的路面预瞄方法、系统、设备及介质"
+      inventors          : "秦也辰、史少阳等"
+      status             : "发明专利"
+
+
+  # ----------------------------------------------------------
+  # 专业能力
+  # ----------------------------------------------------------
+
+  skills:
+    - category           : "智能驾驶规划与控制"
+      details            : "具备路径规划、轨迹规划、模型预测控制（MPC）以及深度强化学习（SAC、DDPG）算法研究与开发经验；熟悉 CARLA、PRESCAN 闭环仿真和硬件在环验证流程。"
+
+    - category           : "感知、定位与建图"
+      details            : "熟悉激光雷达点云处理、SLAM、三维目标检测与感知不确定性评估。"
+
+    - category           : "编程与开发环境"
+      details            : "熟练使用 Python，具备 C++ 算法开发能力；熟悉 Linux、ROS 常用开发工具。"
+
+    - category           : "深度学习与数据处理"
+      details            : "了解 PyTorch 训练与推理流程，熟悉 PointNet、PointPillars、CenterPoint、BEV 等三维感知方法；熟练使用 MATLAB、Python、Origin 进行数据处理、可视化与统计分析。"
 
 
 # ============================================================
-# 三、个人主页扩展信息
+# 论文分类
 #
-# 以下字段不是 Academic Pages 的强制字段，
-# 但可以在 Markdown、HTML 或 Liquid 模板中调用。
-#
-# 示例：
-# {{ site.profile.current_status }}
-#
-# 遍历研究方向：
-# {% for item in site.research_interests %}
-#   <li>{{ item }}</li>
-# {% endfor %}
-# ============================================================
-
-profile:
-
-  current_status         : "北京理工大学车辆工程硕博连读研究生"
-
-  degree                 : "工学博士研究生"
-
-  expected_graduation    : "2027 年 6 月"
-
-  university             : "北京理工大学"
-
-  school                 : "机械与车辆学院"
-
-  major                  : "车辆工程"
-
-  advisor                : "秦也辰 教授"
-
-  undergraduate_school   : "北京化工大学"
-
-  undergraduate_major    : "机械工程"
-
-  undergraduate_rank     : "专业第 1 名，共 125 人"
-
-  research_summary       : "面向复杂交通环境中的智能车辆安全决策、轨迹规划与运动控制问题，研究风险感知强化学习、模型预测控制、感知不确定性建模、三维环境感知及无人平台路径规划方法。"
-
-  career_focus           : "智能驾驶决策、规划与控制算法研究及开发"
-
-
-# ============================================================
-# 四、研究方向
-#
-# 可在首页、About 页面或 Research 页面中读取。
-# ============================================================
-
-research_interests:
-
-  - "智能车辆决策与运动规划"
-
-  - "风险感知与安全强化学习"
-
-  - "模型预测控制与车辆运动控制"
-
-  - "感知不确定性评估与风险建模"
-
-  - "自动驾驶轨迹规划与碰撞规避"
-
-  - "激光雷达点云处理与三维目标检测"
-
-  - "高程地图、路面预瞄与环境建图"
-
-  - "非结构化环境可通行性分析与路径规划"
-
-
-# ============================================================
-# 五、技术能力
-#
-# 这些是自定义字段，可通过 site.technical_skills 调用。
-# ============================================================
-
-technical_skills:
-
-  planning_and_control:
-
-    title               : "智能驾驶规划与控制"
-
-    items:
-
-      - "路径规划与轨迹规划"
-
-      - "模型预测控制（MPC）"
-
-      - "车辆运动学与动力学约束规划"
-
-      - "强化学习算法：SAC、DDPG"
-
-      - "风险感知安全决策"
-
-      - "轨迹跟踪与横纵向控制"
-
-
-  perception_and_mapping:
-
-    title               : "感知、定位与建图"
-
-    items:
-
-      - "激光雷达点云处理"
-
-      - "三维目标检测"
-
-      - "感知不确定性量化"
-
-      - "SLAM 与环境建图"
-
-      - "高程地图构建"
-
-      - "非结构化地形可通行性分析"
-
-
-  programming:
-
-    title               : "编程与开发"
-
-    items:
-
-      - "Python"
-
-      - "C++"
-
-      - "MATLAB"
-
-      - "Linux"
-
-      - "ROS"
-
-      - "Git"
-
-
-  deep_learning:
-
-    title               : "深度学习与数据处理"
-
-    items:
-
-      - "PyTorch"
-
-      - "PointNet"
-
-      - "PointPillars"
-
-      - "CenterPoint"
-
-      - "BEV 感知方法"
-
-      - "Monte Carlo Dropout"
-
-      - "Origin 数据分析与绘图"
-
-
-  simulation_and_testing:
-
-    title               : "仿真与测试"
-
-    items:
-
-      - "CARLA 闭环仿真"
-
-      - "PRESCAN 闭环仿真"
-
-      - "硬件在环测试"
-
-      - "自动驾驶算法场景测试"
-
-      - "实车数据处理与结果分析"
-
-
-# ============================================================
-# 六、代表性教育经历
-#
-# 自定义字段，适合在首页自动生成教育背景。
-# ============================================================
-
-education_history:
-
-  - institution          : "北京理工大学"
-    degree               : "车辆工程硕博连读"
-    admission            : "推荐免试"
-    period               : "2021.09—2027.06"
-    advisor              : "秦也辰 教授"
-    description          : "研究方向为智能车辆规划、控制与安全决策。"
-
-  - institution          : "北京化工大学"
-    degree               : "机械工程学士"
-    period               : "2017.09—2021.06"
-    advisor              : "王维民 教授"
-    description          : "本科专业排名第 1，共 125 人。"
-
-
-# ============================================================
-# 七、荣誉与能力标签
-# ============================================================
-
-honors:
-
-  - "国家奖学金"
-
-  - "一等学业奖学金"
-
-  - "优秀党员"
-
-  - "优秀团干部"
-
-  - "京彩大创市级一等奖"
-
-  - "北京化工大学机械工程专业本科排名第 1"
-
-
-languages:
-
-  - language             : "中文"
-    level                : "母语"
-
-  - language             : "英语"
-    level                : "CET-6"
-
-
-# ============================================================
-# 八、代表性项目关键词
-#
-# 项目的完整介绍建议分别存放在：
-# _portfolio/
-# 或者自行创建：
-# _projects/
-#
-# 这里仅保存适合首页展示的简要信息。
-# ============================================================
-
-featured_projects:
-
-  - title                : "基于风险感知自进化强化学习的自动驾驶决策与规划系统"
-    role                 : "负责人"
-    period               : "2025.10—2026.06"
-    keywords:
-      - "风险感知强化学习"
-      - "SAC"
-      - "模型预测控制"
-      - "在线风险监督"
-      - "交互式自动驾驶"
-
-  - title                : "感知不确定性驱动的自动驾驶风险自适应轨迹规划系统"
-    role                 : "负责人"
-    period               : "2024.04—2026.03"
-    keywords:
-      - "感知不确定性"
-      - "PointPillars"
-      - "Monte Carlo Dropout"
-      - "风险自适应 MPC"
-      - "轨迹规划"
-
-  - title                : "分辨率自适应高程建图与路面预瞄感知系统"
-    role                 : "负责人"
-    period               : "2023.04—2025.12"
-    keywords:
-      - "激光雷达"
-      - "高程地图"
-      - "四叉树"
-      - "道路表面预瞄"
-      - "智能悬架"
-
-  - title                : "面向非结构化地形的无人平台可通行性建模与自适应路径规划"
-    role                 : "主要参与"
-    period               : "2024.01—2026.06"
-    keywords:
-      - "非结构化环境"
-      - "高程地图"
-      - "可通行性分析"
-      - "路径规划"
-      - "无人平台"
-
-  - title                : "Onsite 自动驾驶算法挑战赛 PNC 算法开发"
-    role                 : "负责人"
-    period               : "2024.03—2024.06"
-    keywords:
-      - "EM Planner"
-      - "IDM"
-      - "轨迹跟踪"
-      - "闭环仿真"
-      - "场景识别"
-
-
-# ============================================================
-# 九、论文成果分类
-#
-# Publications 页面会使用这些标题。
+# 在各论文 Markdown 文件的 Front Matter 中使用对应 category：
+# category: manuscripts
+# category: conferences
+# category: patents
 # ============================================================
 
 publication_category:
-
-  books:
-    title                : "专著与书籍章节"
-
   manuscripts:
     title                : "期刊论文"
 
@@ -466,682 +333,222 @@ publication_category:
 
 
 # ============================================================
-# 十、代表性科研成果
-#
-# 这些字段主要用于自定义首页。
-# 正式论文页面建议使用 _publications 目录管理。
+# 网站通用设置
 # ============================================================
 
-selected_publications:
-
-  - title                : "Resolution-adaptive elevation mapping based road surface preview method for intelligent vehicles"
-    authors              : "Shaoyang Shi et al."
-    venue                : "Measurement"
-    year                 : 2026
-    volume               : "272"
-    pages                : "121066"
-    type                 : "期刊论文"
-    status               : "已发表"
-
-  - title                : "A Risk-Aware Decision Making and Motion Planning Framework for Interactive Autonomous Driving"
-    authors              : "Shaoyang Shi et al."
-    venue                : "IEEE International Conference on Intelligent Transportation Systems"
-    abbreviation         : "ITSC"
-    year                 : 2026
-    pages                : "399–406"
-    type                 : "会议论文"
-    status               : "已录用"
-
-  - title                : "Perceptual Uncertainty-aware Trajectory Planning for Autonomous Vehicles"
-    authors              : "Shaoyang Shi et al."
-    venue                : "IEEE Transactions on Vehicular Technology"
-    year                 : 2026
-    type                 : "期刊论文"
-    status               : "审稿中"
-
-  - title                : "Policy-conditioned Risk-aware Safe Reinforcement Learning with Model-Based Planning for Autonomous Driving"
-    authors              : "Shaoyang Shi et al."
-    venue                : "Expert Systems with Applications"
-    year                 : 2026
-    type                 : "期刊论文"
-    status               : "审稿中"
-
-
-selected_patents:
-
-  - title                : "一种自动驾驶轨迹规划方法、系统、设备、介质及产品"
-    inventors            : "秦也辰、史少阳等"
-    status               : "实质审查"
-
-  - title                : "一种面向自动驾驶的感知不确定性评估方法"
-    inventors            : "秦也辰、史少阳等"
-    status               : "实质审查"
-
-  - title                : "一种基于点云输入的路面预瞄方法、系统、设备及介质"
-    inventors            : "秦也辰、史少阳等"
-    status               : "专利申请"
-
-
-# ============================================================
-# 十一、网站通用设置
-# ============================================================
-
-# 页面没有设置预览图时使用的默认图片
-# 文件应放在 images/profile.png
-teaser                   : "profile.png"
-
-# 是否显示面包屑导航
+teaser                   :
 breadcrumbs              : false
 
-# 阅读速度
-# 中文阅读速度与英文不同，因此设置为 300
+# 中文内容阅读速度通常高于英文，适当提高估算值。
 words_per_minute         : 300
 
-# 是否构建日期在未来的内容
-# 部分论文和项目使用 2026 年日期，因此保持开启
+# 允许显示未来日期的论文或项目页面。
 future                   : true
 
-# 是否显示“阅读全文”
 read_more                : "disabled"
-
-# 是否在学术报告页面显示地图
 talkmap_link             : false
 
 
 # ============================================================
-# 十二、评论系统
-#
-# 个人学术主页默认不启用评论。
+# 评论和订阅
+# 个人学术主页默认关闭评论与 RSS 入口。
 # ============================================================
 
 comments:
-
   provider               : false
 
-  disqus:
-    shortname            :
-
-  discourse:
-    server               :
-
-  facebook:
-    appid                :
-    num_posts            :
-    colorscheme          :
-
-
-# ============================================================
-# 十三、Staticman 评论配置
-#
-# 当前评论系统关闭，本部分仅保留兼容配置。
-# ============================================================
-
-staticman:
-
-  allowedFields:
-    - "name"
-    - "email"
-    - "url"
-    - "message"
-
-  branch                 : "main"
-
-  commitMessage          : "收到一条新评论。"
-
-  filename               : "comment-{@timestamp}"
-
-  format                 : "yml"
-
-  moderation             : true
-
-  path                   : "_data/comments/{options.slug}"
-
-  requiredFields:
-    - "name"
-    - "email"
-    - "message"
-
-  transforms:
-    email                : "md5"
-
-  generatedFields:
-    date:
-      type               : "date"
-      options:
-        format           : "iso8601"
-
-
-# ============================================================
-# 十四、RSS / Atom Feed
-#
-# 当前网站以个人简历和科研展示为主，默认隐藏 RSS。
-# 后续开设博客时可改为 false。
-# ============================================================
-
 atom_feed:
-
   hide                   : true
-
   path                   :
 
 
 # ============================================================
-# 十五、搜索引擎站点验证
-#
-# 在 Google Search Console 或 Bing Webmaster Tools
-# 获取验证码后填写。
+# 社交分享与结构化数据
 # ============================================================
 
-google_site_verification :
-
-bing_site_verification   :
-
-alexa_site_verification  :
-
-yandex_site_verification :
-
-
-# ============================================================
-# 十六、社交分享与 SEO
-# ============================================================
-
-twitter:
-
-  username               :
-
-
-facebook:
-
-  username               :
-
-  app_id                 :
-
-  publisher              :
-
-
-# 分享到社交平台时使用的默认图片
 og_image                 : "/images/profile.png"
+og_description           : *description
 
-# 分享到社交平台时使用的默认描述
-og_description           : "北京理工大学车辆工程硕博连读研究生史少阳的个人学术主页，研究方向包括智能车辆决策与规划、风险感知强化学习、模型预测控制及感知不确定性评估。"
-
-
-# 人物结构化数据
 social:
-
   type                   : "Person"
-
-  name                   : "史少阳"
+  name                   : *name
 
   links:
-
     - "https://ssyxszsl.github.io"
-
     - "https://github.com/ssyxszsl"
 
 
 # ============================================================
-# 十七、网站访问统计
-#
-# 当前关闭。
-#
-# 如需启用 Google Analytics 4，可修改为：
-#
-# analytics:
-#   provider: "google-analytics-4"
-#   google:
-#     tracking_id: "G-XXXXXXXXXX"
+# 网站访问统计
+# 如需启用 Google Analytics，可之后补充配置。
 # ============================================================
 
 analytics:
-
-  provider               : "false"
-
-  google:
-
-    tracking_id          :
+  provider               : false
 
 
 # ============================================================
-# 十八、Jekyll 文件读取设置
+# Jekyll 文件读取设置
 # ============================================================
 
 include:
-
   - .htaccess
-
   - _pages
-
   - files
 
-
 exclude:
-
   - "*.sublime-project"
-
   - "*.sublime-workspace"
-
   - .asset-cache
-
   - .bundle
-
   - .github
-
   - .jekyll-assets-cache
-
   - .sass-cache
-
   - assets/js/_main.js
-
   - assets/js/plugins
-
   - assets/js/vendor
-
   - CHANGELOG
-
   - Capfile
-
   - config
-
   - Dockerfile
-
   - Gemfile
-
   - Gruntfile.js
-
   - gulpfile.js
-
   - LICENSE
-
   - local
-
   - log
-
   - node_modules
-
   - package.json*
-
   - Rakefile
-
   - README
-
   - tmp
-
   - vendor
 
-
 keep_files:
-
   - .git
-
   - .svn
 
-
 encoding                 : "utf-8"
-
 markdown_ext             : "markdown,mkdown,mkdn,mkd,md"
 
 
 # ============================================================
-# 十九、Markdown 转换设置
+# Markdown 转换设置
 # ============================================================
 
 markdown                 : kramdown
-
 highlighter              : rouge
-
 lsi                      : false
-
 excerpt_separator        : "\n\n"
-
 incremental              : false
 
-
-# ============================================================
-# 二十、Kramdown Markdown 设置
-# ============================================================
-
 kramdown:
-
   input                  : GFM
-
   hard_wrap              : false
-
   auto_ids               : true
-
   footnote_nr            : 1
-
   entity_output          : as_char
-
-  toc_levels             : 1..6
-
-  smart_quotes           : lsquo,rsquo,ldquo,rdquo
-
+  toc_levels             : "1..6"
+  smart_quotes           : "lsquo,rsquo,ldquo,rdquo"
   enable_coderay         : false
 
 
 # ============================================================
-# 二十一、内容集合
+# 内容集合
 #
-# teaching：
-#   教学经历
+# 简历中没有教学和学术报告内容，因此仅保留论文与项目集合。
 #
-# publications：
-#   期刊论文、会议论文和专利
-#
-# portfolio：
-#   Academic Pages 原有的项目集合
-#
-# projects：
-#   新增的项目集合，可创建 _projects 目录
-#
-# talks：
-#   学术报告、会议报告
+# publications 对应科研成果。
+# portfolio 对应项目经历和竞赛经历。
 # ============================================================
 
 collections:
-
-  teaching:
-
-    output               : true
-
-    permalink            : /teaching/:path/
-
-
   publications:
-
     output               : true
-
     permalink            : /publications/:path/
 
-
   portfolio:
-
     output               : true
-
-    permalink            : /portfolio/:path/
-
-
-  projects:
-
-    output               : true
-
     permalink            : /projects/:path/
 
 
-  talks:
-
-    output               : true
-
-    permalink            : /talks/:path/
-
-
 # ============================================================
-# 二十二、页面与集合的默认设置
+# 页面与集合的默认设置
 # ============================================================
 
 defaults:
-
-  # ----------------------------------------------------------
-  # 博客文章
-  # ----------------------------------------------------------
-
-  - scope:
-
-      path                : ""
-
-      type                : posts
-
-    values:
-
-      layout              : single
-
-      author_profile      : true
-
-      read_time           : true
-
-      comments            : false
-
-      share               : false
-
-      related             : false
-
-
-  # ----------------------------------------------------------
   # 普通页面
-  # ----------------------------------------------------------
-
   - scope:
-
       path                : ""
-
       type                : pages
 
     values:
-
       layout              : single
-
       author_profile      : true
-
       comments            : false
-
       share               : false
 
 
-  # ----------------------------------------------------------
-  # 教学经历
-  # ----------------------------------------------------------
-
+  # 科研成果页面
   - scope:
-
       path                : ""
-
-      type                : teaching
-
-    values:
-
-      layout              : single
-
-      author_profile      : true
-
-      share               : false
-
-      comments            : false
-
-
-  # ----------------------------------------------------------
-  # 论文成果
-  # ----------------------------------------------------------
-
-  - scope:
-
-      path                : ""
-
       type                : publications
 
     values:
-
       layout              : single
-
       author_profile      : true
-
+      comments            : false
       share               : true
 
-      comments            : false
 
-
-  # ----------------------------------------------------------
-  # Academic Pages 原有 Portfolio
-  # ----------------------------------------------------------
-
+  # 项目经历页面
   - scope:
-
       path                : ""
-
       type                : portfolio
 
     values:
-
       layout              : single
-
       author_profile      : true
-
+      comments            : false
       share               : false
-
-      comments            : false
-
-
-  # ----------------------------------------------------------
-  # 自定义科研项目
-  # ----------------------------------------------------------
-
-  - scope:
-
-      path                : ""
-
-      type                : projects
-
-    values:
-
-      layout              : single
-
-      author_profile      : true
-
-      share               : false
-
-      comments            : false
-
-
-  # ----------------------------------------------------------
-  # 学术报告
-  # ----------------------------------------------------------
-
-  - scope:
-
-      path                : ""
-
-      type                : talks
-
-    values:
-
-      layout              : talk
-
-      author_profile      : true
-
-      share               : true
-
-      comments            : false
 
 
 # ============================================================
-# 二十三、Sass / SCSS 样式
+# Sass / SCSS 样式
 # ============================================================
 
 sass:
-
   sass_dir                : _sass
-
   style                   : compressed
 
 
 # ============================================================
-# 二十四、网站输出设置
+# 网站输出设置
 # ============================================================
 
 permalink                 : /:categories/:title/
-
-# 网站以中国标准时间为准
 timezone                  : "Asia/Shanghai"
 
 
-# 如需开启博客分页，可以取消以下配置的注释
-#
-# paginate               : 5
-# paginate_path          : /page:num/
-
-
 # ============================================================
-# 二十五、Jekyll 插件
+# GitHub Pages 插件
 # ============================================================
 
 plugins:
-
-  - jekyll-feed
-
-  - jekyll-gist
-
-  - jekyll-paginate
-
   - jekyll-sitemap
-
   - jekyll-redirect-from
-
-  - jemoji
-
-
-# ============================================================
-# 二十六、GitHub Pages 安全模式插件白名单
-# ============================================================
 
 whitelist:
-
-  - jekyll-feed
-
-  - jekyll-gist
-
-  - jekyll-paginate
-
   - jekyll-sitemap
-
   - jekyll-redirect-from
 
-  - jemoji
-
 
 # ============================================================
-# 二十七、分类与标签归档
-# ============================================================
-
-category_archive:
-
-  type                   : liquid
-
-  path                   : /categories/
-
-
-tag_archive:
-
-  type                   : liquid
-
-  path                   : /tags/
-
-
-# 如自行部署并安装 jekyll-archives，
-# 可以启用下面的配置。
-#
-# jekyll-archives:
-#
-#   enabled:
-#     - categories
-#     - tags
-#
-#   layouts:
-#     category           : archive-taxonomy
-#     tag                : archive-taxonomy
-#
-#   permalinks:
-#     category           : /categories/:name/
-#     tag                : /tags/:name/
-
-
-# ============================================================
-# 二十八、HTML 压缩
+# HTML 压缩
 # ============================================================
 
 compress_html:
-
   clippings              : all
 
   ignore:
-
     envs                 : development
