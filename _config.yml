@@ -1,361 +1,1147 @@
-# Welcome to Jekyll!
+# ============================================================
+# Academic Pages / Jekyll 全局配置
 #
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve -l -H localhost`. If you change this file, please restart the 
-# server process.
+# 本文件用于配置网站名称、作者信息、SEO、内容集合和插件等。
+# 修改本文件后，本地运行时需要停止并重新启动 Jekyll：
+#
+# bundle exec jekyll serve -l -H localhost
+#
+# 网站地址：
+# https://ssyxszsl.github.io
+# ============================================================
 
-# Basic Site Settings
-locale                   : "en-US"
-site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Your Name / Site Title"
+
+# ============================================================
+# 一、网站基础信息
+# ============================================================
+
+# 中文语言环境
+locale                   : "zh-CN"
+
+# 可选主题：
+# default、air、sunrise、mint、dirt、contrast
+#
+# air 风格简洁、留白较多，适合作为个人学术主页和网页简历
+site_theme               : "air"
+
+# 网站主标题
+title                    : "史少阳｜智能车辆规划与控制"
+
+# 浏览器标题中使用的分隔符
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
-                                                           # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
 
-# Site Author - The following control what appear as part of the author content on the side bar.
-#               If a field is blank the icon and link will not appear, otherwise it will be shown.
-#               Additional customization can be done by editing /_includes/author-profile.html
+# 网站名称
+name                     : &name "史少阳"
+
+# 网站默认描述
+# 用于搜索引擎、页面元信息和社交平台分享
+description              : &description "史少阳的个人学术主页。北京理工大学车辆工程硕博连读研究生，研究方向包括智能车辆决策与规划、风险感知强化学习、模型预测控制、感知不确定性评估、三维环境感知与路径规划。"
+
+# GitHub Pages 网站地址
+url                      : "https://ssyxszsl.github.io"
+
+# 用户主页仓库不需要子路径
+baseurl                  : ""
+
+# GitHub 仓库名称
+repository               : "ssyxszsl/ssyxszsl.github.io"
+
+
+# ============================================================
+# 二、作者信息
+#
+# 这些信息通常显示在网页左侧作者栏。
+# 留空的字段一般不会显示。
+# 作者栏模板位于：
+# _includes/author-profile.html
+# ============================================================
+
 author:
-  # Biographic information
+
+  # ----------------------------------------------------------
+  # 基本信息
+  # ----------------------------------------------------------
+
+  # 请将头像保存为：
+  # images/profile.png
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
-  uri              : # URL
-  email            : "none@example.org" 
 
-  # Academic websites
-  academia         : # URL
-  arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-  inspire-hep      : # URL
-  impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
-  semantic         : # URL
-  ssrn             : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
-  scopus           : # URL
-  zotero           : # URL
+  name             : "史少阳"
+
+  # 英文姓名不是 Academic Pages 默认字段，
+  # 但可以在自定义页面中通过 site.author.english_name 调用
+  english_name     : "Shaoyang Shi"
+
+  pronouns         :
+
+  # 左侧作者栏建议保持简洁
+  bio              : "北京理工大学车辆工程硕博连读研究生，研究智能车辆决策、规划、控制与安全。预计于 2027 年 6 月毕业。"
+
+  location         : "北京，中国"
+
+  employer         : "北京理工大学"
+
+  # 个人网站主页
+  uri              : "https://ssyxszsl.github.io"
+
+  # 学校邮箱
+  email            : "shishaoyang@bit.edu.cn"
+
+  # 建议不要在公开 GitHub 仓库中直接保存手机号
+  phone            :
 
 
-  # Repositories and software development
-  bitbucket        : # Username - Update with your username on the site
-  codepen          : # Username
-  dribbble         : # Username
-  github           : "academicpages"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
+  # ----------------------------------------------------------
+  # 学术平台
+  #
+  # 已经注册相应平台后，再填写完整主页 URL。
+  # 不要填写示例地址，否则网页会显示错误链接。
+  # ----------------------------------------------------------
 
-  # Social media
-  artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
-  facebook         : # Username
-  flickr           : # Username
-  foursquare       : # Username
-  goodreads        : # Username
-  google_plus      : # Username
-  keybase          : # Username
-  instagram        : # Username
-  lastfm           : # Username
-  linkedin         : # Username
-  mastodon         : # URL
-  medium           : # URL
-  pinterest        : # Username
-  soundcloud       : # Username
-  steam            : # Username
-  telegram         : # URL
-  tumblr           : # Username
-  twitter          : # Username for X / Twitter
-  vine             : # Username
-  weibo            : # Username
-  wikipedia        : # Username
-  xing             : # Username
-  youtube          : # Username
-  zhihu            : # Username
+  academia         :
+  arxiv            :
+  googlescholar    :
+  inspire-hep      :
+  impactstory      :
+  orcid            :
+  semantic         :
+  ssrn             :
+  pubmed           :
+  researchgate     :
+  scopus           :
+  zotero           :
 
-# Publication Category - The following the list of publication categories and their headings
+
+  # ----------------------------------------------------------
+  # 代码仓库与开发平台
+  # ----------------------------------------------------------
+
+  bitbucket        :
+  codepen          :
+  dribbble         :
+
+  # GitHub 只填写用户名
+  github           : "ssyxszsl"
+
+  kaggle           :
+  stackoverflow    :
+
+
+  # ----------------------------------------------------------
+  # 社交媒体
+  #
+  # 尚未公开或不希望展示的平台保持为空。
+  # ----------------------------------------------------------
+
+  artstation       :
+  bluesky          :
+  facebook         :
+  flickr           :
+  foursquare       :
+  goodreads        :
+  google_plus      :
+  keybase          :
+  instagram        :
+  lastfm           :
+  linkedin         :
+  mastodon         :
+  medium           :
+  pinterest        :
+  soundcloud       :
+  steam            :
+  telegram         :
+  tumblr           :
+  twitter          :
+  vine             :
+  weibo            :
+  wikipedia        :
+  xing             :
+  youtube          :
+  zhihu            :
+
+
+# ============================================================
+# 三、个人主页扩展信息
+#
+# 以下字段不是 Academic Pages 的强制字段，
+# 但可以在 Markdown、HTML 或 Liquid 模板中调用。
+#
+# 示例：
+# {{ site.profile.current_status }}
+#
+# 遍历研究方向：
+# {% for item in site.research_interests %}
+#   <li>{{ item }}</li>
+# {% endfor %}
+# ============================================================
+
+profile:
+
+  current_status         : "北京理工大学车辆工程硕博连读研究生"
+
+  degree                 : "工学博士研究生"
+
+  expected_graduation    : "2027 年 6 月"
+
+  university             : "北京理工大学"
+
+  school                 : "机械与车辆学院"
+
+  major                  : "车辆工程"
+
+  advisor                : "秦也辰 教授"
+
+  undergraduate_school   : "北京化工大学"
+
+  undergraduate_major    : "机械工程"
+
+  undergraduate_rank     : "专业第 1 名，共 125 人"
+
+  research_summary       : "面向复杂交通环境中的智能车辆安全决策、轨迹规划与运动控制问题，研究风险感知强化学习、模型预测控制、感知不确定性建模、三维环境感知及无人平台路径规划方法。"
+
+  career_focus           : "智能驾驶决策、规划与控制算法研究及开发"
+
+
+# ============================================================
+# 四、研究方向
+#
+# 可在首页、About 页面或 Research 页面中读取。
+# ============================================================
+
+research_interests:
+
+  - "智能车辆决策与运动规划"
+
+  - "风险感知与安全强化学习"
+
+  - "模型预测控制与车辆运动控制"
+
+  - "感知不确定性评估与风险建模"
+
+  - "自动驾驶轨迹规划与碰撞规避"
+
+  - "激光雷达点云处理与三维目标检测"
+
+  - "高程地图、路面预瞄与环境建图"
+
+  - "非结构化环境可通行性分析与路径规划"
+
+
+# ============================================================
+# 五、技术能力
+#
+# 这些是自定义字段，可通过 site.technical_skills 调用。
+# ============================================================
+
+technical_skills:
+
+  planning_and_control:
+
+    title               : "智能驾驶规划与控制"
+
+    items:
+
+      - "路径规划与轨迹规划"
+
+      - "模型预测控制（MPC）"
+
+      - "车辆运动学与动力学约束规划"
+
+      - "强化学习算法：SAC、DDPG"
+
+      - "风险感知安全决策"
+
+      - "轨迹跟踪与横纵向控制"
+
+
+  perception_and_mapping:
+
+    title               : "感知、定位与建图"
+
+    items:
+
+      - "激光雷达点云处理"
+
+      - "三维目标检测"
+
+      - "感知不确定性量化"
+
+      - "SLAM 与环境建图"
+
+      - "高程地图构建"
+
+      - "非结构化地形可通行性分析"
+
+
+  programming:
+
+    title               : "编程与开发"
+
+    items:
+
+      - "Python"
+
+      - "C++"
+
+      - "MATLAB"
+
+      - "Linux"
+
+      - "ROS"
+
+      - "Git"
+
+
+  deep_learning:
+
+    title               : "深度学习与数据处理"
+
+    items:
+
+      - "PyTorch"
+
+      - "PointNet"
+
+      - "PointPillars"
+
+      - "CenterPoint"
+
+      - "BEV 感知方法"
+
+      - "Monte Carlo Dropout"
+
+      - "Origin 数据分析与绘图"
+
+
+  simulation_and_testing:
+
+    title               : "仿真与测试"
+
+    items:
+
+      - "CARLA 闭环仿真"
+
+      - "PRESCAN 闭环仿真"
+
+      - "硬件在环测试"
+
+      - "自动驾驶算法场景测试"
+
+      - "实车数据处理与结果分析"
+
+
+# ============================================================
+# 六、代表性教育经历
+#
+# 自定义字段，适合在首页自动生成教育背景。
+# ============================================================
+
+education_history:
+
+  - institution          : "北京理工大学"
+    degree               : "车辆工程硕博连读"
+    admission            : "推荐免试"
+    period               : "2021.09—2027.06"
+    advisor              : "秦也辰 教授"
+    description          : "研究方向为智能车辆规划、控制与安全决策。"
+
+  - institution          : "北京化工大学"
+    degree               : "机械工程学士"
+    period               : "2017.09—2021.06"
+    advisor              : "王维民 教授"
+    description          : "本科专业排名第 1，共 125 人。"
+
+
+# ============================================================
+# 七、荣誉与能力标签
+# ============================================================
+
+honors:
+
+  - "国家奖学金"
+
+  - "一等学业奖学金"
+
+  - "优秀党员"
+
+  - "优秀团干部"
+
+  - "京彩大创市级一等奖"
+
+  - "北京化工大学机械工程专业本科排名第 1"
+
+
+languages:
+
+  - language             : "中文"
+    level                : "母语"
+
+  - language             : "英语"
+    level                : "CET-6"
+
+
+# ============================================================
+# 八、代表性项目关键词
+#
+# 项目的完整介绍建议分别存放在：
+# _portfolio/
+# 或者自行创建：
+# _projects/
+#
+# 这里仅保存适合首页展示的简要信息。
+# ============================================================
+
+featured_projects:
+
+  - title                : "基于风险感知自进化强化学习的自动驾驶决策与规划系统"
+    role                 : "负责人"
+    period               : "2025.10—2026.06"
+    keywords:
+      - "风险感知强化学习"
+      - "SAC"
+      - "模型预测控制"
+      - "在线风险监督"
+      - "交互式自动驾驶"
+
+  - title                : "感知不确定性驱动的自动驾驶风险自适应轨迹规划系统"
+    role                 : "负责人"
+    period               : "2024.04—2026.03"
+    keywords:
+      - "感知不确定性"
+      - "PointPillars"
+      - "Monte Carlo Dropout"
+      - "风险自适应 MPC"
+      - "轨迹规划"
+
+  - title                : "分辨率自适应高程建图与路面预瞄感知系统"
+    role                 : "负责人"
+    period               : "2023.04—2025.12"
+    keywords:
+      - "激光雷达"
+      - "高程地图"
+      - "四叉树"
+      - "道路表面预瞄"
+      - "智能悬架"
+
+  - title                : "面向非结构化地形的无人平台可通行性建模与自适应路径规划"
+    role                 : "主要参与"
+    period               : "2024.01—2026.06"
+    keywords:
+      - "非结构化环境"
+      - "高程地图"
+      - "可通行性分析"
+      - "路径规划"
+      - "无人平台"
+
+  - title                : "Onsite 自动驾驶算法挑战赛 PNC 算法开发"
+    role                 : "负责人"
+    period               : "2024.03—2024.06"
+    keywords:
+      - "EM Planner"
+      - "IDM"
+      - "轨迹跟踪"
+      - "闭环仿真"
+      - "场景识别"
+
+
+# ============================================================
+# 九、论文成果分类
+#
+# Publications 页面会使用这些标题。
+# ============================================================
+
 publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
-  conferences:
-    title: 'Conference Papers'
 
-# Site Settings
-teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
-breadcrumbs              : false # true, false (default)
-words_per_minute         : 160
+  books:
+    title                : "专著与书籍章节"
+
+  manuscripts:
+    title                : "期刊论文"
+
+  conferences:
+    title                : "会议论文"
+
+  patents:
+    title                : "发明专利"
+
+
+# ============================================================
+# 十、代表性科研成果
+#
+# 这些字段主要用于自定义首页。
+# 正式论文页面建议使用 _publications 目录管理。
+# ============================================================
+
+selected_publications:
+
+  - title                : "Resolution-adaptive elevation mapping based road surface preview method for intelligent vehicles"
+    authors              : "Shaoyang Shi et al."
+    venue                : "Measurement"
+    year                 : 2026
+    volume               : "272"
+    pages                : "121066"
+    type                 : "期刊论文"
+    status               : "已发表"
+
+  - title                : "A Risk-Aware Decision Making and Motion Planning Framework for Interactive Autonomous Driving"
+    authors              : "Shaoyang Shi et al."
+    venue                : "IEEE International Conference on Intelligent Transportation Systems"
+    abbreviation         : "ITSC"
+    year                 : 2026
+    pages                : "399–406"
+    type                 : "会议论文"
+    status               : "已录用"
+
+  - title                : "Perceptual Uncertainty-aware Trajectory Planning for Autonomous Vehicles"
+    authors              : "Shaoyang Shi et al."
+    venue                : "IEEE Transactions on Vehicular Technology"
+    year                 : 2026
+    type                 : "期刊论文"
+    status               : "审稿中"
+
+  - title                : "Policy-conditioned Risk-aware Safe Reinforcement Learning with Model-Based Planning for Autonomous Driving"
+    authors              : "Shaoyang Shi et al."
+    venue                : "Expert Systems with Applications"
+    year                 : 2026
+    type                 : "期刊论文"
+    status               : "审稿中"
+
+
+selected_patents:
+
+  - title                : "一种自动驾驶轨迹规划方法、系统、设备、介质及产品"
+    inventors            : "秦也辰、史少阳等"
+    status               : "实质审查"
+
+  - title                : "一种面向自动驾驶的感知不确定性评估方法"
+    inventors            : "秦也辰、史少阳等"
+    status               : "实质审查"
+
+  - title                : "一种基于点云输入的路面预瞄方法、系统、设备及介质"
+    inventors            : "秦也辰、史少阳等"
+    status               : "专利申请"
+
+
+# ============================================================
+# 十一、网站通用设置
+# ============================================================
+
+# 页面没有设置预览图时使用的默认图片
+# 文件应放在 images/profile.png
+teaser                   : "profile.png"
+
+# 是否显示面包屑导航
+breadcrumbs              : false
+
+# 阅读速度
+# 中文阅读速度与英文不同，因此设置为 300
+words_per_minute         : 300
+
+# 是否构建日期在未来的内容
+# 部分论文和项目使用 2026 年日期，因此保持开启
 future                   : true
-read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link             : false      #change to true to add link to talkmap on talks page
+
+# 是否显示“阅读全文”
+read_more                : "disabled"
+
+# 是否在学术报告页面显示地图
+talkmap_link             : false
+
+
+# ============================================================
+# 十二、评论系统
+#
+# 个人学术主页默认不启用评论。
+# ============================================================
+
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+
+  provider               : false
+
   disqus:
     shortname            :
+
   discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+    server               :
+
   facebook:
     appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
+    num_posts            :
+    colorscheme          :
+
+
+# ============================================================
+# 十三、Staticman 评论配置
+#
+# 当前评论系统关闭，本部分仅保留兼容配置。
+# ============================================================
+
 staticman:
-  allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "gh-pages" # "master", "gh-pages"
-  commitMessage          : "New comment."
-  filename               : comment-{@timestamp}
+
+  allowedFields:
+    - "name"
+    - "email"
+    - "url"
+    - "message"
+
+  branch                 : "main"
+
+  commitMessage          : "收到一条新评论。"
+
+  filename               : "comment-{@timestamp}"
+
   format                 : "yml"
+
   moderation             : true
+
   path                   : "_data/comments/{options.slug}"
-  requiredFields         : ['name', 'email', 'message']
+
+  requiredFields:
+    - "name"
+    - "email"
+    - "message"
+
   transforms:
     email                : "md5"
+
   generatedFields:
     date:
       type               : "date"
       options:
-        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+        format           : "iso8601"
+
+
+# ============================================================
+# 十四、RSS / Atom Feed
+#
+# 当前网站以个人简历和科研展示为主，默认隐藏 RSS。
+# 后续开设博客时可改为 false。
+# ============================================================
+
 atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
-  path                   : # blank (default) uses feed.xml
+
+  hide                   : true
+
+  path                   :
 
 
-# SEO Related
+# ============================================================
+# 十五、搜索引擎站点验证
+#
+# 在 Google Search Console 或 Bing Webmaster Tools
+# 获取验证码后填写。
+# ============================================================
+
 google_site_verification :
+
 bing_site_verification   :
+
 alexa_site_verification  :
+
 yandex_site_verification :
 
 
-# Social Sharing
+# ============================================================
+# 十六、社交分享与 SEO
+# ============================================================
+
 twitter:
-  username               : &twitter
-facebook:
+
   username               :
+
+
+facebook:
+
+  username               :
+
   app_id                 :
+
   publisher              :
-og_image                 :  # Social media default site image
-og_description           :  # Social media default site image description
-# For specifying social profiles
-# - https://developers.google.com/structured-data/customize/social-profiles
+
+
+# 分享到社交平台时使用的默认图片
+og_image                 : "/images/profile.png"
+
+# 分享到社交平台时使用的默认描述
+og_description           : "北京理工大学车辆工程硕博连读研究生史少阳的个人学术主页，研究方向包括智能车辆决策与规划、风险感知强化学习、模型预测控制及感知不确定性评估。"
+
+
+# 人物结构化数据
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+
+  type                   : "Person"
+
+  name                   : "史少阳"
+
+  links:
+
+    - "https://ssyxszsl.github.io"
+
+    - "https://github.com/ssyxszsl"
 
 
-# Analytics
+# ============================================================
+# 十七、网站访问统计
+#
+# 当前关闭。
+#
+# 如需启用 Google Analytics 4，可修改为：
+#
+# analytics:
+#   provider: "google-analytics-4"
+#   google:
+#     tracking_id: "G-XXXXXXXXXX"
+# ============================================================
+
 analytics:
-  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+
+  provider               : "false"
+
   google:
+
     tracking_id          :
 
 
-# Reading Files
+# ============================================================
+# 十八、Jekyll 文件读取设置
+# ============================================================
+
 include:
+
   - .htaccess
+
   - _pages
+
   - files
+
+
 exclude:
+
   - "*.sublime-project"
+
   - "*.sublime-workspace"
+
   - .asset-cache
+
   - .bundle
+
   - .github
+
   - .jekyll-assets-cache
+
   - .sass-cache
+
   - assets/js/_main.js
+
   - assets/js/plugins
+
   - assets/js/vendor
+
   - CHANGELOG
+
   - Capfile
+
   - config
+
   - Dockerfile
+
   - Gemfile
+
   - Gruntfile.js
+
   - gulpfile.js
+
   - LICENSE
+
   - local
+
   - log
+
   - node_modules
+
   - package.json*
+
   - Rakefile
+
   - README
+
   - tmp
+
   - vendor
+
+
 keep_files:
+
   - .git
+
   - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 
-# Conversion
-markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
+encoding                 : "utf-8"
+
+markdown_ext             : "markdown,mkdown,mkdn,mkd,md"
 
 
-# Markdown Processing
+# ============================================================
+# 十九、Markdown 转换设置
+# ============================================================
+
+markdown                 : kramdown
+
+highlighter              : rouge
+
+lsi                      : false
+
+excerpt_separator        : "\n\n"
+
+incremental              : false
+
+
+# ============================================================
+# 二十、Kramdown Markdown 设置
+# ============================================================
+
 kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+
+  input                  : GFM
+
+  hard_wrap              : false
+
+  auto_ids               : true
+
+  footnote_nr            : 1
+
+  entity_output          : as_char
+
+  toc_levels             : 1..6
+
+  smart_quotes           : lsquo,rsquo,ldquo,rdquo
+
+  enable_coderay         : false
 
 
-# These settings control the types of collections used by the template
+# ============================================================
+# 二十一、内容集合
+#
+# teaching：
+#   教学经历
+#
+# publications：
+#   期刊论文、会议论文和专利
+#
+# portfolio：
+#   Academic Pages 原有的项目集合
+#
+# projects：
+#   新增的项目集合，可创建 _projects 目录
+#
+# talks：
+#   学术报告、会议报告
+# ============================================================
+
 collections:
+
   teaching:
-    output: true
-    permalink: /:collection/:path/
+
+    output               : true
+
+    permalink            : /teaching/:path/
+
+
   publications:
-    output: true
-    permalink: /:collection/:path/
+
+    output               : true
+
+    permalink            : /publications/:path/
+
+
   portfolio:
-    output: true
-    permalink: /:collection/:path/
+
+    output               : true
+
+    permalink            : /portfolio/:path/
+
+
+  projects:
+
+    output               : true
+
+    permalink            : /projects/:path/
+
+
   talks:
-    output: true
-    permalink: /:collection/:path/
+
+    output               : true
+
+    permalink            : /talks/:path/
 
 
-# These settings control how pages and collections are included in the site
+# ============================================================
+# 二十二、页面与集合的默认设置
+# ============================================================
+
 defaults:
-  # _posts
+
+  # ----------------------------------------------------------
+  # 博客文章
+  # ----------------------------------------------------------
+
   - scope:
-      path: ""
-      type: posts
+
+      path                : ""
+
+      type                : posts
+
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _publications
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
+
+      layout              : single
+
+      author_profile      : true
+
+      read_time           : true
+
+      comments            : false
+
+      share               : false
+
+      related             : false
 
 
-# Sass/SCSS
+  # ----------------------------------------------------------
+  # 普通页面
+  # ----------------------------------------------------------
+
+  - scope:
+
+      path                : ""
+
+      type                : pages
+
+    values:
+
+      layout              : single
+
+      author_profile      : true
+
+      comments            : false
+
+      share               : false
+
+
+  # ----------------------------------------------------------
+  # 教学经历
+  # ----------------------------------------------------------
+
+  - scope:
+
+      path                : ""
+
+      type                : teaching
+
+    values:
+
+      layout              : single
+
+      author_profile      : true
+
+      share               : false
+
+      comments            : false
+
+
+  # ----------------------------------------------------------
+  # 论文成果
+  # ----------------------------------------------------------
+
+  - scope:
+
+      path                : ""
+
+      type                : publications
+
+    values:
+
+      layout              : single
+
+      author_profile      : true
+
+      share               : true
+
+      comments            : false
+
+
+  # ----------------------------------------------------------
+  # Academic Pages 原有 Portfolio
+  # ----------------------------------------------------------
+
+  - scope:
+
+      path                : ""
+
+      type                : portfolio
+
+    values:
+
+      layout              : single
+
+      author_profile      : true
+
+      share               : false
+
+      comments            : false
+
+
+  # ----------------------------------------------------------
+  # 自定义科研项目
+  # ----------------------------------------------------------
+
+  - scope:
+
+      path                : ""
+
+      type                : projects
+
+    values:
+
+      layout              : single
+
+      author_profile      : true
+
+      share               : false
+
+      comments            : false
+
+
+  # ----------------------------------------------------------
+  # 学术报告
+  # ----------------------------------------------------------
+
+  - scope:
+
+      path                : ""
+
+      type                : talks
+
+    values:
+
+      layout              : talk
+
+      author_profile      : true
+
+      share               : true
+
+      comments            : false
+
+
+# ============================================================
+# 二十三、Sass / SCSS 样式
+# ============================================================
+
 sass:
-  sass_dir: _sass
-  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+  sass_dir                : _sass
+
+  style                   : compressed
 
 
-# Outputting
-permalink: /:categories/:title/
-# paginate: 5 # amount of posts to show
-# paginate_path: /page:num/
-timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# ============================================================
+# 二十四、网站输出设置
+# ============================================================
+
+permalink                 : /:categories/:title/
+
+# 网站以中国标准时间为准
+timezone                  : "Asia/Shanghai"
 
 
-# Plugins
+# 如需开启博客分页，可以取消以下配置的注释
+#
+# paginate               : 5
+# paginate_path          : /page:num/
+
+
+# ============================================================
+# 二十五、Jekyll 插件
+# ============================================================
+
 plugins:
+
   - jekyll-feed
+
   - jekyll-gist
+
   - jekyll-paginate
+
   - jekyll-sitemap
+
   - jekyll-redirect-from
+
   - jemoji
 
-# Mimic GitHub Pages with --safe
+
+# ============================================================
+# 二十六、GitHub Pages 安全模式插件白名单
+# ============================================================
+
 whitelist:
+
   - jekyll-feed
+
   - jekyll-gist
+
   - jekyll-paginate
+
   - jekyll-sitemap
+
   - jekyll-redirect-from
+
   - jemoji
 
 
-# Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path/my-awesome-category/index.html ~> path: /
+# ============================================================
+# 二十七、分类与标签归档
+# ============================================================
+
 category_archive:
-  type: liquid
-  path: /categories/
+
+  type                   : liquid
+
+  path                   : /categories/
+
+
 tag_archive:
-  type: liquid
-  path: /tags/
-# https://github.com/jekyll/jekyll-archives
+
+  type                   : liquid
+
+  path                   : /tags/
+
+
+# 如自行部署并安装 jekyll-archives，
+# 可以启用下面的配置。
+#
 # jekyll-archives:
+#
 #   enabled:
 #     - categories
 #     - tags
+#
 #   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
+#     category           : archive-taxonomy
+#     tag                : archive-taxonomy
+#
 #   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+#     category           : /categories/:name/
+#     tag                : /tags/:name/
 
 
-# HTML Compression
-# - https://jch.penibelst.de/
+# ============================================================
+# 二十八、HTML 压缩
+# ============================================================
+
 compress_html:
-  clippings: all
+
+  clippings              : all
+
   ignore:
-    envs: development
+
+    envs                 : development
