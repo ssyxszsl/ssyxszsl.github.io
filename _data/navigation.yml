@@ -14,9 +14,4 @@ main:
 
   - title: "Education"
     url: "#education"
-
-  - title: "Internships"
-    url: "#internship-modal"
-
-  - title: "Services"
-    url: "#services"
+    
