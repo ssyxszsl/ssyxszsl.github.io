@@ -1,17 +1,21 @@
-# main links links
 main:
-  - title: "News"
-    url: "#news"
+  - title: "个人简介"
+    url: "/#about"
 
-  - title: "Open Source Code"
-    url: "#projects"
+  - title: "教育背景"
+    url: "/#education"
 
-  - title: "Publications"
-    url: "#publications"
+  - title: "项目经历"
+    url: "/#projects"
 
-  - title: "Honors"
-    url: "#honors-modal"
+  - title: "科研成果"
+    url: "/#publications"
 
-  - title: "Education"
-    url: "#education"
-    
+  - title: "荣誉奖励"
+    url: "/#honors"
+
+  - title: "专业能力"
+    url: "/#skills"
+
+  - title: "联系方式"
+    url: "/#contact"
